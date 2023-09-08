@@ -19,6 +19,7 @@ class Mahasiswa {
     }
 
     public String tentukanGrade() {
+
         double nilaiAkhir = hitungNilaiAkhir();
         if (nilaiAkhir >= 80) {
             return "A";
@@ -34,22 +35,22 @@ class Mahasiswa {
     }
 
     public void tampilData() {
+
         double nilaiAkhir = hitungNilaiAkhir();
         String grade = tentukanGrade();
 
-        System.out.println("NIM: " + nim);
-        System.out.println("Nama: " + nama);
-        System.out.println("Nilai UTS: " + nilaiUTS);
-        System.out.println("Nilai UAS: " + nilaiUAS);
-        System.out.println("Nilai Akhir: " + nilaiAkhir);
-        System.out.println("Grade: " + grade);
-        System.out.println();
+        System.out.println("======================================================");
+            System.out.println("NIM\t\tNama\t\tUTS\tUAS\tGrade");
+            System.out.println(nim+"\t\t"+nama+"\t"+nilaiUTS+"\t"+nilaiUAS+"\t"+grade);
     }
 }
 
 public class modul1 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+
+        String nama,nim;
+        double nilaiUTS,nilaiUAS;
 
         System.out.print("Masukkan jumlah mahasiswa: ");
         int jumlahMahasiswa = scanner.nextInt();
@@ -60,16 +61,16 @@ public class modul1 {
         for (int i = 0; i < jumlahMahasiswa; i++) {
             System.out.println("Data Mahasiswa ke-" + (i + 1));
             System.out.print("NIM: ");
-            String nim = scanner.nextLine();
+            nim = scanner.nextLine();
             System.out.print("Nama: ");
-            String nama = scanner.nextLine();
+            nama = scanner.nextLine();
             System.out.print("Nilai UTS: ");
-            double nilaiUTS = scanner.nextDouble();
+            nilaiUTS = scanner.nextDouble();
             System.out.print("Nilai UAS: ");
-            double nilaiUAS = scanner.nextDouble();
+            nilaiUAS = scanner.nextDouble();
             scanner.nextLine();  // Menangani newline character
 
-            mahasiswaArray[i] = new Mahasiswa(nim, nama, nilaiUTS, nilaiUAS);
+            mahasiswaArray[i] = new Mahasiswa(nim, nama, nilaiUTS, nilaiUAS); //berfungsi untuk memasukan nilai ke dalam mahasiswaArray[i]
         }
 
         System.out.println("Data Mahasiswa:");
