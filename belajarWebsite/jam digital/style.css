@@ -6,7 +6,7 @@ body {
   align-items: center;
   height: 100vh;
   justify-content: center;
-  background: url("https://images.unsplash.com/photo-1536238181516-718d83622819?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&dl=alexander-sinn-9PKKcK6WxNc-unsplash.jpg");
+  background-color:rgb(94, 177, 245);
   background-size: cover;
   overflow: hidden;
 }
@@ -57,4 +57,54 @@ h2 {
   height: 30px;
   font-size: 15px;
   background-color:darkslategray;
+}
+
+.input{
+  visibility: hidden;
+}
+
+.label{
+  position:inherit;
+  width: 80px;
+  height: 40px;
+  background-color: lightgray;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.circle{
+  width: 40px;
+  background-color: white;
+  height: 40px;
+  border-radius: 50%;
+  top: 3px;
+  position:inherit;
+  left: 3px;
+  animation: toggleOff 0.4s linear forwards;
+}
+.input:checked + .label {
+  background-color: white;
+}
+
+.input:checked + .label .circle {
+  animation: toggleOn 0.4s linear forwards;
+  background-color: black;
+}
+
+@keyframes toggleOn {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(40px);
+  }
+}
+
+@keyframes toggleOff {
+  0% {
+    transform: translateX(40px);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
